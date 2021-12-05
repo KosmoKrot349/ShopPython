@@ -24,3 +24,7 @@ def Buy(request,ProductId):
         form = f.BuyForm(initial={'productId':product.id})
         return render(request, 'Buy.html', {'product': product, 'form':form})
 
+def MyOrders(request):
+    orders = m.Order.objects.filter(userEmail=request.user.email)
+    return render(request, 'MyOrders.html', {'orders': orders})
+
