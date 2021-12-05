@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy page</title>
+</head>
+<body>
+<h1>{{ product.Name }}</h1>
+<br>
+<image style="width:500px;height:500px"  src="{{ product.img.url }}"/>
+<br>
+<span>{{ product.Desc }}</span>
+<br>
+<span>{{ product.PricePerUnit }}$</span>
+    <form method="POST">
+        {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Buy" >
+</form>
+</body>
+</html>
